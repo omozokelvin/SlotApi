@@ -1,6 +1,12 @@
 import { EnvironmentEnum } from '@/_common/enums/environment.enum';
 import { plainToClass } from 'class-transformer';
-import { IsInt, IsOptional, IsString, validateSync } from 'class-validator';
+import {
+  IsEmail,
+  IsInt,
+  IsOptional,
+  IsString,
+  validateSync,
+} from 'class-validator';
 
 export class EnvironmentVariables {
   @IsString()
@@ -29,6 +35,15 @@ export class EnvironmentVariables {
 
   @IsString()
   TERMII_API_KEY: string;
+
+  @IsEmail()
+  ADMIN_EMAIL: string;
+
+  @IsEmail()
+  SUPPORT_EMAIL: string;
+
+  @IsString()
+  SENTRY_DSN: string;
 
   // this is optional, because we can read them off AWS and we don't need to explicity set them
   @IsOptional()

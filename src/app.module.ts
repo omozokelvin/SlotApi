@@ -27,6 +27,7 @@ import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
     ConfigModule.forRoot({
       isGlobal: true,
       cache: true,
+      // On application start, validate the environment variables
       validate: validateEnv,
     }),
     ThrottlerModule.forRoot({

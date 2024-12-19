@@ -7,8 +7,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "nest build && npm run sentry:sourcemaps",
-    "postbuild": "cp -r templates dist/templates",
+    "build": "nest build",
+    "postbuild": "npm run sentry:sourcemaps && cp -r templates dist/templates",
     "build:doc": "npx @compodoc/compodoc -p tsconfig.doc.json",
     "start": "node dist/main",
     "start:dev": "nest start --watch",
