@@ -29,7 +29,7 @@ export function appProps() {
     accessTokenTll: 2 * 60 * 60, // 2 hours and it's currently in seconds,
     refreshTokenTll: 30 * 24 * 60 * 60, // 30 days
     region: 'us-east-1',
-    adminEmail: 'admin@slot.ng',
-    supportEmail: 'support@slot.ng',
+    adminEmail: process.env.ADMIN_EMAIL,
+    supportEmail: process.env.SUPPORT_EMAIL,
   };
 }

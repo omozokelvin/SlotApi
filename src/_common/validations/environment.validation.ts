@@ -25,23 +25,12 @@ export class EnvironmentVariables {
   SENTRY_AUTH_TOKEN: string;
 
   @IsString()
-  FLUTTERWAVE_PUBLIC_KEY: string;
-
-  @IsString()
-  FLUTTERWAVE_SECRET_KEY: string;
-
-  @IsString()
-  FLUTTERWAVE_SECRET_HASH: string;
-
-  @IsString()
   SENDCHAMP_PUBLIC_KEY: string;
 
   @IsString()
   TERMII_API_KEY: string;
 
-  @IsString()
-  EXPO_PUSH_TOKEN: string;
-
+  // this is optional, because we can read them off AWS and we don't need to explicity set them
   @IsOptional()
   @IsString()
   ACCESS_KEY_AWS: string;
