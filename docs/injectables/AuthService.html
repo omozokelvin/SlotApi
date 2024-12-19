@@ -1083,7 +1083,7 @@ export class AuthService {
 
       if (existingUser) {
         this.logger.log(&#x27;User already exists&#x27;);
-        existingUser.id &#x3D; existingUser._id.toString();
+        existingUser.id &#x3D; existingUser.id;
 
         response &#x3D; await this.login(existingUser, userAgent, session);
       } else {

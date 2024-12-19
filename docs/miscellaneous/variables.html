@@ -1781,7 +1781,10 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
-  success: &lt;T &#x3D; null&gt;(message: string, data: T &#x3D; null): ApiResponse&lt;T&gt; &#x3D;&gt; {
+  success: &lt;T &#x3D; undefined&gt;(
+    message: string,
+    data: T &#x3D; undefined,
+  ): ApiResponse&lt;T&gt; &#x3D;&gt; {
     return {
       message,
       data,
