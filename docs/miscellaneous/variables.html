@@ -1,0 +1,1942 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>slot-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">slot-api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#aggregatePaginateAndSort" title="src/_common/helpers/filter.helper.ts" ><b>aggregatePaginateAndSort</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AMBIGUOUS_CHARACTERS_REGEX" title="src/_common/constants/regex.constant.ts" ><b>AMBIGUOUS_CHARACTERS_REGEX</b>&nbsp;&nbsp;&nbsp;(src/.../regex.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ApiRouteSchema" title="src/role/schemas/api-route.schema.ts" ><b>ApiRouteSchema</b>&nbsp;&nbsp;&nbsp;(src/.../api-route.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#arrayDifference" title="src/_common/helpers/filter.helper.ts" ><b>arrayDifference</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#arraysEqual" title="src/_common/helpers/filter.helper.ts" ><b>arraysEqual</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#BYPASS_RESPONSE_TRANSFORM" title="src/_common/constants/decorator-keys.constant.ts" ><b>BYPASS_RESPONSE_TRANSFORM</b>&nbsp;&nbsp;&nbsp;(src/.../decorator-keys.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#BypassResponseTransform" title="src/_common/decorators/bypass-response-transform.decorator.ts" ><b>BypassResponseTransform</b>&nbsp;&nbsp;&nbsp;(src/.../bypass-response-transform.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#cacheKeys" title="src/_common/constants/cache.constant.ts" ><b>cacheKeys</b>&nbsp;&nbsp;&nbsp;(src/.../cache.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#camelCaseToReadable" title="src/_common/helpers/string.helper.ts" ><b>camelCaseToReadable</b>&nbsp;&nbsp;&nbsp;(src/.../string.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#dateRangeFilter" title="src/_common/helpers/filter.helper.ts" ><b>dateRangeFilter</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#decodeBase64" title="src/_common/helpers/base64.helper.ts" ><b>decodeBase64</b>&nbsp;&nbsp;&nbsp;(src/.../base64.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#emptyObject" title="src/_common/helpers/filter.helper.ts" ><b>emptyObject</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#encodeBase64" title="src/_common/helpers/base64.helper.ts" ><b>encodeBase64</b>&nbsp;&nbsp;&nbsp;(src/.../base64.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#enumValuesAsArray" title="src/_common/helpers/enum.helper.ts" ><b>enumValuesAsArray</b>&nbsp;&nbsp;&nbsp;(src/.../enum.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#enumValuesExcept" title="src/_common/helpers/enum.helper.ts" ><b>enumValuesExcept</b>&nbsp;&nbsp;&nbsp;(src/.../enum.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#formatDate" title="src/_common/helpers/date.helper.ts" ><b>formatDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#generateRandomNumbers" title="src/_common/helpers/string.helper.ts" ><b>generateRandomNumbers</b>&nbsp;&nbsp;&nbsp;(src/.../string.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#generateRandomStrings" title="src/_common/helpers/string.helper.ts" ><b>generateRandomStrings</b>&nbsp;&nbsp;&nbsp;(src/.../string.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getInternationalPhoneNumber" title="src/_common/helpers/mobile.helper.ts" ><b>getInternationalPhoneNumber</b>&nbsp;&nbsp;&nbsp;(src/.../mobile.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getNow" title="src/_common/helpers/date.helper.ts" ><b>getNow</b>&nbsp;&nbsp;&nbsp;(src/.../date.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getReadableStream" title="src/_common/helpers/uploads.helper.ts" ><b>getReadableStream</b>&nbsp;&nbsp;&nbsp;(src/.../uploads.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GetUser" title="src/_common/decorators/get-user.decorator.ts" ><b>GetUser</b>&nbsp;&nbsp;&nbsp;(src/.../get-user.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#handleAxiosError" title="src/_common/helpers/http.helper.ts" ><b>handleAxiosError</b>&nbsp;&nbsp;&nbsp;(src/.../http.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoanSchema" title="src/loan/schemas/loan.schema.ts" ><b>LoanSchema</b>&nbsp;&nbsp;&nbsp;(src/.../loan.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#longDate" title="src/_common/helpers/date.helper.ts" ><b>longDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#maskEmailAddress" title="src/_common/helpers/string.helper.ts" ><b>maskEmailAddress</b>&nbsp;&nbsp;&nbsp;(src/.../string.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#maskPhoneNumber" title="src/_common/helpers/string.helper.ts" ><b>maskPhoneNumber</b>&nbsp;&nbsp;&nbsp;(src/.../string.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mediumDate" title="src/_common/helpers/date.helper.ts" ><b>mediumDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#numberRangeFilter" title="src/_common/helpers/filter.helper.ts" ><b>numberRangeFilter</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OPTIONAL_GUARD_KEY" title="src/_common/constants/decorator-keys.constant.ts" ><b>OPTIONAL_GUARD_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../decorator-keys.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OTP_REGEX" title="src/_common/constants/regex.constant.ts" ><b>OTP_REGEX</b>&nbsp;&nbsp;&nbsp;(src/.../regex.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OtpSchema" title="src/otp/schemas/otp.schema.ts" ><b>OtpSchema</b>&nbsp;&nbsp;&nbsp;(src/.../otp.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#paginateAndSort" title="src/_common/helpers/filter.helper.ts" ><b>paginateAndSort</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PaginatedModel" title="src/_common/decorators/pagination.decorator.ts" ><b>PaginatedModel</b>&nbsp;&nbsp;&nbsp;(src/.../pagination.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PASSWORD_REGEX" title="src/_common/constants/regex.constant.ts" ><b>PASSWORD_REGEX</b>&nbsp;&nbsp;&nbsp;(src/.../regex.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#RefreshTokenSchema" title="src/auth/schemas/refresh-token.schema.ts" ><b>RefreshTokenSchema</b>&nbsp;&nbsp;&nbsp;(src/.../refresh-token.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resolveAuthType" title="src/_common/helpers/auth.helper.ts" ><b>resolveAuthType</b>&nbsp;&nbsp;&nbsp;(src/.../auth.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#responder" title="src/_common/helpers/responder.helper.ts" ><b>responder</b>&nbsp;&nbsp;&nbsp;(src/.../responder.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ROLES_KEY" title="src/_common/constants/decorator-keys.constant.ts" ><b>ROLES_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../decorator-keys.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#RoleSchema" title="src/role/schemas/role.schema.ts" ><b>RoleSchema</b>&nbsp;&nbsp;&nbsp;(src/.../role.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectFromEnum" title="src/_common/helpers/enum.helper.ts" ><b>selectFromEnum</b>&nbsp;&nbsp;&nbsp;(src/.../enum.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#sentenceCase" title="src/_common/helpers/string.helper.ts" ><b>sentenceCase</b>&nbsp;&nbsp;&nbsp;(src/.../string.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#sleep" title="src/_common/helpers/promises.helper.ts" ><b>sleep</b>&nbsp;&nbsp;&nbsp;(src/.../promises.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SUB_DOMAIN_REGEX" title="src/_common/constants/regex.constant.ts" ><b>SUB_DOMAIN_REGEX</b>&nbsp;&nbsp;&nbsp;(src/.../regex.constant.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#timeRangeFilter" title="src/_common/helpers/filter.helper.ts" ><b>timeRangeFilter</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#titleCase" title="src/_common/helpers/string.helper.ts" ><b>titleCase</b>&nbsp;&nbsp;&nbsp;(src/.../string.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#transformBoolean" title="src/_common/helpers/filter.helper.ts" ><b>transformBoolean</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#transformDoc" title="src/_common/helpers/filter.helper.ts" ><b>transformDoc</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#transformRecordsForDownload" title="src/_common/helpers/filter.helper.ts" ><b>transformRecordsForDownload</b>&nbsp;&nbsp;&nbsp;(src/.../filter.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserSchema" title="src/user/schemas/user.schema.ts" ><b>UserSchema</b>&nbsp;&nbsp;&nbsp;(src/.../user.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validMobileNumber" title="src/_common/helpers/mobile.helper.ts" ><b>validMobileNumber</b>&nbsp;&nbsp;&nbsp;(src/.../mobile.helper.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/_common/helpers/filter.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="aggregatePaginateAndSort"></a>
+                    <span class="name">
+                        <span ><b>aggregatePaginateAndSort</b></span>
+                        <a href="#aggregatePaginateAndSort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async &lt;T&gt;(
+  params: AggregatePaginateAndSort&lt;T&gt;,
+) &#x3D;&gt; {
+  const {
+    model,
+    pipeline &#x3D; [],
+    sort &#x3D; &#x27;&#x27;,
+    filters &#x3D; {},
+    page &#x3D; 1,
+    limit &#x3D; 10,
+  } &#x3D; params;
+
+  if (isNotEmptyObject(filters)) {
+    pipeline.push({
+      $match: filters,
+    });
+  }
+
+  if (sort) {
+    const [columnName, order] &#x3D; sort.split(&#x27;,&#x27;);
+
+    pipeline.push({
+      $sort: {
+        [columnName]: order &#x3D;&#x3D;&#x3D; &#x27;asc&#x27; ? 1 : -1,
+      },
+    });
+  }
+
+  if (page) {
+    pipeline.push({
+      $skip: (page - 1) * limit,
+    });
+  }
+
+  if (limit) {
+    pipeline.push({
+      $limit: limit,
+    });
+  }
+
+  const dataPromise &#x3D; model.aggregate(pipeline);
+
+  const countPipeline &#x3D; [...pipeline]; // copy the pipeline
+  countPipeline.push({ $count: &#x27;total&#x27; });
+
+  const totalPromise &#x3D; model.aggregate(countPipeline);
+
+  return Promise.all([dataPromise, totalPromise]).then(
+    ([data, [totalResult]]) &#x3D;&gt; {
+      const total &#x3D; totalResult ? totalResult.total : 0;
+      const lastPage &#x3D; Math.ceil(total / limit);
+      const hasNextPage &#x3D; page &lt; lastPage;
+      const hasPreviousPage &#x3D; page &gt; 1;
+
+      const meta: PaginationMeta &#x3D; {
+        total,
+        page,
+        lastPage,
+        hasNextPage,
+        hasPreviousPage,
+        limit,
+      };
+
+      return {
+        data: data.map(transformDoc) as T[],
+        meta,
+      };
+    },
+  );
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrayDifference"></a>
+                    <span class="name">
+                        <span ><b>arrayDifference</b></span>
+                        <a href="#arrayDifference"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(arr1: string[], arr2: string[]) &#x3D;&gt; {
+  return arr1.filter((item) &#x3D;&gt; !arr2.includes(item));
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arraysEqual"></a>
+                    <span class="name">
+                        <span ><b>arraysEqual</b></span>
+                        <a href="#arraysEqual"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(arr1: string[], arr2: string[]) &#x3D;&gt; {
+  if (arr1.length !&#x3D;&#x3D; arr2.length) {
+    return false;
+  }
+
+  for (let i &#x3D; 0; i &lt; arr1.length; i++) {
+    if (arr1[i] !&#x3D;&#x3D; arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dateRangeFilter"></a>
+                    <span class="name">
+                        <span ><b>dateRangeFilter</b></span>
+                        <a href="#dateRangeFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(minDate: Date, maxDate: Date, key: string) &#x3D;&gt; {
+  if (minDate &amp;&amp; !maxDate) {
+    return {
+      [key]: {
+        $gte: startOfDay(minDate),
+      },
+    };
+  }
+
+  if (maxDate &amp;&amp; !minDate) {
+    return {
+      [key]: {
+        $lte: endOfDay(maxDate),
+      },
+    };
+  }
+
+  if (minDate &amp;&amp; maxDate) {
+    return {
+      [key]: {
+        $gte: startOfDay(minDate),
+        $lte: endOfDay(maxDate),
+      },
+    };
+  }
+
+  return {};
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emptyObject"></a>
+                    <span class="name">
+                        <span ><b>emptyObject</b></span>
+                        <a href="#emptyObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: Record&lt;string, any&gt;) &#x3D;&gt; {
+  return Object.keys(obj).length &#x3D;&#x3D;&#x3D; 0 &amp;&amp; obj.constructor &#x3D;&#x3D;&#x3D; Object;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="numberRangeFilter"></a>
+                    <span class="name">
+                        <span ><b>numberRangeFilter</b></span>
+                        <a href="#numberRangeFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(min: number, max: number, key: string) &#x3D;&gt; {
+  if (min &amp;&amp; !max) {
+    return {
+      [key]: {
+        $gte: min,
+      },
+    };
+  }
+
+  if (max &amp;&amp; !min) {
+    return {
+      [key]: {
+        $lte: max,
+      },
+    };
+  }
+
+  if (min &amp;&amp; max) {
+    return {
+      [key]: {
+        $gte: min,
+        $lte: max,
+      },
+    };
+  }
+
+  return {};
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginateAndSort"></a>
+                    <span class="name">
+                        <span ><b>paginateAndSort</b></span>
+                        <a href="#paginateAndSort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async &lt;T&gt;(params: PaginateAndSort&lt;T&gt;) &#x3D;&gt; {
+  const {
+    model,
+    sort &#x3D; &#x27;createdAt,desc&#x27;,
+    filters &#x3D; {},
+    page &#x3D; 1,
+    limit &#x3D; 50,
+    projection &#x3D; null,
+    options &#x3D; null,
+    populate &#x3D; null,
+  } &#x3D; params;
+
+  const query &#x3D; model.find(filters, projection, options);
+
+  if (populate) {
+    query.populate(populate);
+  }
+
+  if (sort) {
+    const [columnName, order] &#x3D; sort.split(&#x27;,&#x27;);
+
+    query.sort({
+      [columnName]: order as SortOrder,
+    });
+  }
+
+  const dataPromise &#x3D; query
+    .skip((page - 1) * limit)
+    .limit(limit)
+    .exec();
+
+  const totalPromise &#x3D; model.countDocuments(filters);
+
+  return Promise.all([dataPromise, totalPromise]).then(([data, total]) &#x3D;&gt; {
+    const lastPage &#x3D; Math.ceil(total / limit);
+    const hasNextPage &#x3D; page &lt; lastPage;
+    const hasPreviousPage &#x3D; page &gt; 1;
+
+    const meta: PaginationMeta &#x3D; {
+      total,
+      page,
+      lastPage,
+      hasNextPage,
+      hasPreviousPage,
+      limit,
+    };
+
+    return {
+      data: data.map(transformDoc) as T[],
+      meta,
+    };
+  });
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timeRangeFilter"></a>
+                    <span class="name">
+                        <span ><b>timeRangeFilter</b></span>
+                        <a href="#timeRangeFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(minDate: Date, maxDate: Date, key: string) &#x3D;&gt; {
+  if (minDate &amp;&amp; !maxDate) {
+    return {
+      [key]: {
+        $gte: minDate,
+      },
+      // $expr: {
+      //   $and: [
+      //     { $gte: [{ $hour: &#x60;$${key}&#x60; }, minDate.getHours() - 1] },
+      //     { $gte: [{ $minute: &#x60;$${key}&#x60; }, minDate.getMinutes()] },
+      //   ],
+      // },
+    };
+  }
+
+  if (maxDate &amp;&amp; !minDate) {
+    return {
+      $expr: {
+        $and: [
+          { $lte: [{ $hour: &#x60;$${key}&#x60; }, maxDate.getHours() - 1] },
+          { $lte: [{ $minute: &#x60;$${key}&#x60; }, maxDate.getMinutes()] },
+        ],
+      },
+    };
+  }
+
+  if (minDate &amp;&amp; maxDate) {
+    return {
+      $expr: {
+        $and: [
+          // MIN
+          { $gte: [{ $hour: &#x60;$${key}&#x60; }, minDate.getHours() - 1] },
+          { $gte: [{ $minute: &#x60;$${key}&#x60; }, minDate.getMinutes()] },
+
+          // MAX
+          { $lte: [{ $hour: &#x60;$${key}&#x60; }, maxDate.getHours() - 1] },
+          { $lte: [{ $minute: &#x60;$${key}&#x60; }, maxDate.getMinutes()] },
+        ],
+      },
+    };
+  }
+
+  return {};
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformBoolean"></a>
+                    <span class="name">
+                        <span ><b>transformBoolean</b></span>
+                        <a href="#transformBoolean"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {
+  return ({ value }) &#x3D;&gt; {
+    const transformed &#x3D; value?.toLowerCase();
+
+    return [&#x27;true&#x27;, &#x27;false&#x27;].includes(transformed)
+      ? transformed &#x3D;&#x3D;&#x3D; &#x27;true&#x27;
+      : undefined;
+  };
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformDoc"></a>
+                    <span class="name">
+                        <span ><b>transformDoc</b></span>
+                        <a href="#transformDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;T&gt;(doc: T): T &#x3D;&gt; {
+  if (!doc) {
+    return null;
+  }
+
+  if ((doc as any)?.isDeleted) {
+    return null;
+  }
+
+  delete (doc as any).isDeleted;
+
+  if ((doc as any)?._id) {
+    (doc as any).id &#x3D; (doc as any)?._id?.toString();
+    delete (doc as any)._id;
+  }
+
+  return doc;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformRecordsForDownload"></a>
+                    <span class="name">
+                        <span ><b>transformRecordsForDownload</b></span>
+                        <a href="#transformRecordsForDownload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;T&gt;(
+  data: T[],
+  keys: (keyof T)[],
+) &#x3D;&gt; {
+  return data.map((item) &#x3D;&gt; {
+    const readableItem: Record&lt;string, unknown&gt; &#x3D; {};
+
+    for (const key of keys) {
+      if (item.hasOwnProperty(key)) {
+        if ([&#x27;createdAt&#x27;, &#x27;updatedAt&#x27;].includes(key as string)) {
+          item[key as string] &#x3D; longDate(item[key as string]);
+        }
+
+        readableItem[camelCaseToReadable(key as string)] &#x3D; item[key];
+      }
+    }
+
+    return readableItem;
+  });
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/constants/regex.constant.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AMBIGUOUS_CHARACTERS_REGEX"></a>
+                    <span class="name">
+                        <span ><b>AMBIGUOUS_CHARACTERS_REGEX</b></span>
+                        <a href="#AMBIGUOUS_CHARACTERS_REGEX"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>/[IiLlOo10\s]/g</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OTP_REGEX"></a>
+                    <span class="name">
+                        <span ><b>OTP_REGEX</b></span>
+                        <a href="#OTP_REGEX"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;^[0-9]{6}$&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PASSWORD_REGEX"></a>
+                    <span class="name">
+                        <span ><b>PASSWORD_REGEX</b></span>
+                        <a href="#PASSWORD_REGEX"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>/^(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*\d)(?:.*[^\w\s])?[a-zA-Z\d!@#$%^&amp;*+\-.,:;&lt;&gt;{}&#x3D;|\\/()__+&quot;&#x27;?~]{8,}$/</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SUB_DOMAIN_REGEX"></a>
+                    <span class="name">
+                        <span ><b>SUB_DOMAIN_REGEX</b></span>
+                        <a href="#SUB_DOMAIN_REGEX"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>/^[a-zA-Z0-9-]+$/</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/role/schemas/api-route.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ApiRouteSchema"></a>
+                    <span class="name">
+                        <span ><b>ApiRouteSchema</b></span>
+                        <a href="#ApiRouteSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(ApiRoute)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/constants/decorator-keys.constant.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BYPASS_RESPONSE_TRANSFORM"></a>
+                    <span class="name">
+                        <span ><b>BYPASS_RESPONSE_TRANSFORM</b></span>
+                        <a href="#BYPASS_RESPONSE_TRANSFORM"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;bypassResponseTransform&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OPTIONAL_GUARD_KEY"></a>
+                    <span class="name">
+                        <span ><b>OPTIONAL_GUARD_KEY</b></span>
+                        <a href="#OPTIONAL_GUARD_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;optional_guard&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ROLES_KEY"></a>
+                    <span class="name">
+                        <span ><b>ROLES_KEY</b></span>
+                        <a href="#ROLES_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;roles&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/decorators/bypass-response-transform.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BypassResponseTransform"></a>
+                    <span class="name">
+                        <span ><b>BypassResponseTransform</b></span>
+                        <a href="#BypassResponseTransform"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt;
+  SetMetadata(BYPASS_RESPONSE_TRANSFORM, true)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/constants/cache.constant.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cacheKeys"></a>
+                    <span class="name">
+                        <span ><b>cacheKeys</b></span>
+                        <a href="#cacheKeys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  apiRoutes: &#x27;apiRoutes&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/string.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="camelCaseToReadable"></a>
+                    <span class="name">
+                        <span ><b>camelCaseToReadable</b></span>
+                        <a href="#camelCaseToReadable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(str: string): string &#x3D;&gt; {
+  return str
+    .replace(/([A-Z])/g, &#x27; $1&#x27;) // Insert a space before all capital letters
+    .replace(/^./, (firstChar) &#x3D;&gt; firstChar.toUpperCase()); // Capitalize the first letter
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateRandomNumbers"></a>
+                    <span class="name">
+                        <span ><b>generateRandomNumbers</b></span>
+                        <a href="#generateRandomNumbers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(length &#x3D; 6) &#x3D;&gt; {
+  const digits &#x3D; &#x27;0123456789&#x27;;
+  let otp &#x3D; &#x27;&#x27;;
+  for (let i &#x3D; 0; i &lt; length; i++) {
+    otp +&#x3D; digits[Math.floor(Math.random() * 10)];
+  }
+  return otp;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateRandomStrings"></a>
+                    <span class="name">
+                        <span ><b>generateRandomStrings</b></span>
+                        <a href="#generateRandomStrings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(length &#x3D; 6) &#x3D;&gt; {
+  const characters &#x3D; &#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789&#x27;;
+  let seed &#x3D; &#x27;&#x27;;
+  for (let i &#x3D; 0; i &lt; length; i++) {
+    seed +&#x3D; characters[Math.floor(Math.random() * 10)];
+  }
+  return seed;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maskEmailAddress"></a>
+                    <span class="name">
+                        <span ><b>maskEmailAddress</b></span>
+                        <a href="#maskEmailAddress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(emailAddress: string) &#x3D;&gt; {
+  if (!emailAddress) {
+    return &#x27;&#x27;;
+  }
+
+  const [firstPart, lastPart] &#x3D; emailAddress.split(&#x27;@&#x27;);
+
+  const nChar &#x3D; firstPart.length &gt; 3 ? 3 : firstPart.length - 1;
+
+  const firstNChars &#x3D; firstPart.substring(0, nChar);
+
+  const lastChar &#x3D; firstPart.charAt(firstPart.length - 1);
+
+  const numberOfAsterisks &#x3D; firstPart.length - firstNChars.length - 1;
+
+  const asterisks &#x3D; &#x27;*&#x27;.repeat(numberOfAsterisks);
+
+  return &#x60;${firstNChars + asterisks + lastChar + &#x27;@&#x27; + lastPart}&#x60;;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maskPhoneNumber"></a>
+                    <span class="name">
+                        <span ><b>maskPhoneNumber</b></span>
+                        <a href="#maskPhoneNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(phoneNumber: string) &#x3D;&gt; {
+  if (!phoneNumber) {
+    return &#x27;&#x27;;
+  }
+
+  const total &#x3D; phoneNumber.length;
+  const nChar &#x3D; 6;
+  const lastNChar &#x3D; 3;
+  const toBeMasked &#x3D; total - nChar - lastNChar;
+  const asterisks &#x3D; &#x27;*&#x27;.repeat(toBeMasked);
+
+  return (
+    phoneNumber.substring(0, nChar) +
+    asterisks +
+    phoneNumber.substr(total - lastNChar)
+  );
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sentenceCase"></a>
+                    <span class="name">
+                        <span ><b>sentenceCase</b></span>
+                        <a href="#sentenceCase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(sentence: string) &#x3D;&gt; {
+  return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="titleCase"></a>
+                    <span class="name">
+                        <span ><b>titleCase</b></span>
+                        <a href="#titleCase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(sentence: string) &#x3D;&gt; {
+  return sentence
+    .split(&#x27; &#x27;)
+    .map((word) &#x3D;&gt; sentenceCase(word))
+    .join(&#x27; &#x27;);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/base64.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decodeBase64"></a>
+                    <span class="name">
+                        <span ><b>decodeBase64</b></span>
+                        <a href="#decodeBase64"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;T&gt;(base64: string): T &#x3D;&gt; {
+  const decoded &#x3D; Buffer.from(base64, &#x27;base64&#x27;).toString(&#x27;ascii&#x27;);
+
+  return JSON.parse(decoded);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="encodeBase64"></a>
+                    <span class="name">
+                        <span ><b>encodeBase64</b></span>
+                        <a href="#encodeBase64"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;T&gt;(payload: T): string &#x3D;&gt; {
+  return Buffer.from(JSON.stringify(payload)).toString(&#x27;base64&#x27;);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/enum.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enumValuesAsArray"></a>
+                    <span class="name">
+                        <span ><b>enumValuesAsArray</b></span>
+                        <a href="#enumValuesAsArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;T&gt;(enumValue: T): string[] &#x3D;&gt; {
+  if (!enumValue) {
+    return [];
+  }
+  return [...Object.values(enumValue)];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enumValuesExcept"></a>
+                    <span class="name">
+                        <span ><b>enumValuesExcept</b></span>
+                        <a href="#enumValuesExcept"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;T&gt;(
+  enumObject: T,
+  except: string,
+): string[] &#x3D;&gt; {
+  return enumValuesAsArray(enumObject).filter((item) &#x3D;&gt; item !&#x3D;&#x3D; except);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectFromEnum"></a>
+                    <span class="name">
+                        <span ><b>selectFromEnum</b></span>
+                        <a href="#selectFromEnum"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&lt;T&gt;(theEnum: T, addEmpty &#x3D; false) &#x3D;&gt; {
+  const selectOptions &#x3D; [];
+
+  addEmpty &amp;&amp; selectOptions.push({ label: &#x27;--Select--&#x27;, value: &#x27;&#x27; });
+
+  for (const [key, value] of Object.entries(
+    theEnum as unknown as ArrayLike&lt;DropDownOption[&#x27;value&#x27;]&gt;,
+  )) {
+    selectOptions.push({
+      label: titleCase(key.replaceAll(&#x27;_&#x27;, &#x27; &#x27;)),
+      value,
+    });
+  }
+
+  return [...selectOptions] as DropDownOption[];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/date.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatDate"></a>
+                    <span class="name">
+                        <span ><b>formatDate</b></span>
+                        <a href="#formatDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(date: Date | null) &#x3D;&gt; {
+  if (!date) {
+    return null;
+  }
+
+  const dateObj &#x3D; new Date(date);
+
+  if (!isValid(dateObj)) {
+    return null;
+  }
+
+  return new Date(format(dateObj, &#x27;yyyy-MM-dd&#x27;));
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNow"></a>
+                    <span class="name">
+                        <span ><b>getNow</b></span>
+                        <a href="#getNow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {
+  const now &#x3D; new Date();
+  now.setSeconds(0);
+  now.setMilliseconds(0);
+  return now;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="longDate"></a>
+                    <span class="name">
+                        <span ><b>longDate</b></span>
+                        <a href="#longDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(date: Date | string): string &#x3D;&gt; {
+  return format(new Date(date), &#x27;d MMM yyyy, HH:mm a&#x27;);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mediumDate"></a>
+                    <span class="name">
+                        <span ><b>mediumDate</b></span>
+                        <a href="#mediumDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(date: Date | string): string &#x3D;&gt; {
+  return format(new Date(date), &#x27;d MMM yyyy&#x27;);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/mobile.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInternationalPhoneNumber"></a>
+                    <span class="name">
+                        <span ><b>getInternationalPhoneNumber</b></span>
+                        <a href="#getInternationalPhoneNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(
+  phoneNumber: string,
+  countryCode: CountryCode &#x3D; &#x27;NG&#x27;,
+): string &#x3D;&gt; {
+  if (!validMobileNumber(phoneNumber, countryCode)) {
+    return &#x27;&#x27;;
+  }
+
+  const parsedPhoneNumber &#x3D; parsePhoneNumber(
+    phoneNumber.toString(),
+    countryCode,
+  );
+
+  return &#x60;${parsedPhoneNumber?.countryCallingCode}${parsedPhoneNumber?.nationalNumber}&#x60;;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validMobileNumber"></a>
+                    <span class="name">
+                        <span ><b>validMobileNumber</b></span>
+                        <a href="#validMobileNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(
+  value: string,
+  countryCode: CountryCode &#x3D; &#x27;NG&#x27;,
+) &#x3D;&gt; {
+  return isValidPhoneNumber(value.toString(), countryCode);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/uploads.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getReadableStream"></a>
+                    <span class="name">
+                        <span ><b>getReadableStream</b></span>
+                        <a href="#getReadableStream"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(buffer: Buffer): Readable &#x3D;&gt; {
+  const stream &#x3D; new Readable();
+
+  stream.push(buffer);
+  stream.push(null);
+
+  return stream;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/decorators/get-user.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GetUser"></a>
+                    <span class="name">
+                        <span ><b>GetUser</b></span>
+                        <a href="#GetUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator(
+  (data: unknown, ctx: ExecutionContext): IUser | null &#x3D;&gt; {
+    const request &#x3D; ctx.switchToHttp().getRequest();
+
+    return isNotEmptyObject(request?.user) ? (request.user as IUser) : null;
+  },
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/http.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleAxiosError"></a>
+                    <span class="name">
+                        <span ><b>handleAxiosError</b></span>
+                        <a href="#handleAxiosError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(error) &#x3D;&gt; {
+  const errorMessage &#x3D; error?.response?.data || error?.response || error;
+
+  return throwError(() &#x3D;&gt; errorMessage);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/loan/schemas/loan.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoanSchema"></a>
+                    <span class="name">
+                        <span ><b>LoanSchema</b></span>
+                        <a href="#LoanSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(Loan)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/otp/schemas/otp.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OtpSchema"></a>
+                    <span class="name">
+                        <span ><b>OtpSchema</b></span>
+                        <a href="#OtpSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(Otp)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/decorators/pagination.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PaginatedModel"></a>
+                    <span class="name">
+                        <span ><b>PaginatedModel</b></span>
+                        <a href="#PaginatedModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(model) &#x3D;&gt; {
+  return applyDecorators(
+    ApiOkResponse({
+      schema: {
+        type: &#x27;object&#x27;,
+        properties: {
+          data: { type: &#x27;array&#x27;, items: { $ref: getSchemaPath(model) } },
+          meta: {
+            type: &#x27;object&#x27;,
+            properties: {
+              total: { type: &#x27;integer&#x27;, example: 100 },
+              page: { type: &#x27;integer&#x27;, example: 1 },
+              lastPage: { type: &#x27;integer&#x27;, example: 2 },
+              hasNextPage: { type: &#x27;boolean&#x27;, example: true },
+              hasPreviousPage: { type: &#x27;boolean&#x27;, example: false },
+              limit: { type: &#x27;integer&#x27;, example: 50 },
+            },
+          },
+        },
+      },
+    }),
+  );
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/auth/schemas/refresh-token.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RefreshTokenSchema"></a>
+                    <span class="name">
+                        <span ><b>RefreshTokenSchema</b></span>
+                        <a href="#RefreshTokenSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(RefreshToken)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/auth.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resolveAuthType"></a>
+                    <span class="name">
+                        <span ><b>resolveAuthType</b></span>
+                        <a href="#resolveAuthType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(
+  emailOrPhone: string,
+): OtpChannelEnum | null &#x3D;&gt; {
+  if (isEmail(emailOrPhone)) {
+    return OtpChannelEnum.EMAIL;
+  }
+
+  if (isMobilePhone(emailOrPhone)) {
+    return OtpChannelEnum.SMS;
+  }
+
+  return null;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/responder.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="responder"></a>
+                    <span class="name">
+                        <span ><b>responder</b></span>
+                        <a href="#responder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  success: &lt;T &#x3D; null&gt;(message: string, data: T &#x3D; null): ApiResponse&lt;T&gt; &#x3D;&gt; {
+    return {
+      message,
+      data,
+    };
+  },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/role/schemas/role.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RoleSchema"></a>
+                    <span class="name">
+                        <span ><b>RoleSchema</b></span>
+                        <a href="#RoleSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(Role)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/_common/helpers/promises.helper.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sleep"></a>
+                    <span class="name">
+                        <span ><b>sleep</b></span>
+                        <a href="#sleep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(ms: number) &#x3D;&gt; {
+  return new Promise((resolve) &#x3D;&gt; setTimeout(resolve, ms));
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/user/schemas/user.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UserSchema"></a>
+                    <span class="name">
+                        <span ><b>UserSchema</b></span>
+                        <a href="#UserSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(User)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
