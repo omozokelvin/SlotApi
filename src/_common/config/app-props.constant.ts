@@ -5,10 +5,9 @@ export function appProps() {
     name: `Slot`,
     description: `Slot is a platform that allows you to buy and sell quality electronics and devices.`,
     version: '1.0',
-    logo: 'https://res.cloudinary.com/darkel/image/upload/v1732523593/carremindernigeria/icon_pss217.png',
+    logo: 'https://slot.ng/media/wysiwyg/logo-icon-3_1_1_.png',
     address: `Lagos, Nigeria`,
-    logoLight:
-      'https://res.cloudinary.com/darkel/image/upload/v1732523593/carremindernigeria/icon_pss217.png',
+    logoLight: 'https://slot.ng/media/wysiwyg/logo-icon-3_1_1_.png',
     playStoreLink: '',
     appleStoreLink: '',
     currentYear: new Date().getFullYear(),
@@ -20,7 +19,7 @@ export function appProps() {
         ? 'https://api.slot.ng'
         : process.env.NODE_ENV === EnvironmentEnum.testing
           ? 'https://testing.api.slot.ng'
-          : 'http://localhost:4000',
+          : `http://localhost:${process.env.PORT}`,
     authClientUrl:
       process.env.NODE_ENV === EnvironmentEnum.prod
         ? 'https://auth.slot.ng'
