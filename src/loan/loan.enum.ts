@@ -1,0 +1,8 @@
+export enum LoanStatusEnum {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+  CANCELLED = 'CANCELLED',
+  DISBURSED = 'DISBURSED',
+  REPAID = 'REPAID',
+}

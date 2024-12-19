@@ -20,6 +20,7 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
+import { LoanModule } from './loan/loan.module';
 
 @Module({
   imports: [
@@ -70,6 +71,7 @@ import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
     RoleModule,
     SendChampModule,
     TermiiModule,
+    LoanModule,
   ],
   controllers: [AppController],
   providers: [

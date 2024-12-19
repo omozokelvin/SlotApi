@@ -6,4 +6,5 @@ export enum ApiTagsEnum {
   default = 'Default',
   termii = 'Termii',
   sendchamp = 'Sendchamp',
+  loan = 'Loan',
 }
