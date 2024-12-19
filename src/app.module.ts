@@ -69,6 +69,7 @@ import { join } from 'path';
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'documentation'),
+      serveRoot: '/doc',
     }),
     MailModule,
     AuthModule,
