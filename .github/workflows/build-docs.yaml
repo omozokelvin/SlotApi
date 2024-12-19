@@ -1,4 +1,4 @@
-name: Build Docs on Testing Only
+name: Build Docs
 
 on:
   push:
@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Git checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -22,5 +22,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build application
-        run: npm run build:docs
+      - name: Build documentation
+        run: npm run build:doc
+
+      - name: Deploy documentation
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs
+          git commit -m 'Update documentation'
+          git push origin HEAD:testing
