@@ -43,7 +43,7 @@
     "@nestjs/platform-express": "^10.4.6",
     "@nestjs/swagger": "^7.4.2",
     "@nestjs/throttler": "^6.2.1",
-    "@sentry/cli": "^2.38.2",
+    "@sentry/cli": "^2.39.1",
     "@sentry/nestjs": "^8.47.0",
     "@sentry/profiling-node": "^8.47.0",
     "axios": "^1.7.4",
