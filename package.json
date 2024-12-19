@@ -23,8 +23,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json --detectOpenHandles",
     "precommit": "npm run format && npm run lint && git add -A",
     "doc": "npm run build:doc -- -s",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org darkel-microsystems-limited --project slot-api ./dist && sentry-cli sourcemaps upload --org darkel-microsystems-limited --project slot-api ./dist",
-    "swagger:generate-static": "ts-node -r tsconfig-paths/register generate-swagger-static.ts"
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org darkel-microsystems-limited --project slot-api ./dist && sentry-cli sourcemaps upload --org darkel-microsystems-limited --project slot-api ./dist"
   },
   "lint-staged": {
     "*.+(ts)": "npm run lint",
