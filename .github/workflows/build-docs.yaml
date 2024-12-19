@@ -1,7 +1,7 @@
 name: Build Docs on Testing Only
 
 on:
-  pull_request:
+  push:
     branches:
       - testing
 
