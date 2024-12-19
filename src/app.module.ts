@@ -21,8 +21,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
 import { LoanModule } from './loan/loan.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
 
 @Module({
   imports: [
@@ -66,10 +64,6 @@ import { join } from 'path';
         };
       },
       inject: [ConfigService],
-    }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'documentation'),
-      serveRoot: '/doc',
     }),
     MailModule,
     AuthModule,
