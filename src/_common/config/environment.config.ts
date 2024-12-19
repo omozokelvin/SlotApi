@@ -10,7 +10,7 @@ export function isTesting() {
 }
 
 export function isInAws() {
-  return isProd() || isTesting();
+  return isProd();
 }
 
 export function isDev() {
