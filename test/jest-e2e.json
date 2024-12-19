@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "../",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/src/$1"
+  },
+  "modulePathIgnorePatterns": [
+    "<rootDir>/layers/cartinary/nodejs",
+    "<rootDir>/layers/nestjs/nodejs"
+  ],
+  "setupFiles": ["<rootDir>/test/jest.setup.ts"]
+}
