@@ -6,7 +6,7 @@ on:
       - testing
 
 jobs:
-  build-check:
+  build-docs:
     runs-on: ubuntu-latest
 
     steps:
