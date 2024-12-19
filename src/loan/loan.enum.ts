@@ -1,8 +1,8 @@
 export enum LoanStatusEnum {
-  PENDING = 'PENDING',
-  APPROVED = 'APPROVED',
-  REJECTED = 'REJECTED',
-  CANCELLED = 'CANCELLED',
-  DISBURSED = 'DISBURSED',
-  REPAID = 'REPAID',
+  pending = 'pending',
+  approved = 'approved',
+  rejected = 'rejected',
+  cancelled = 'cancelled',
+  disbursed = 'disbursed',
+  repaid = 'repaid',
 }
