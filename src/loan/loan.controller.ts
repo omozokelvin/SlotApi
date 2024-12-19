@@ -23,7 +23,7 @@ import {
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @Controller('loan')
-@ApiTags(ApiTagsEnum.user)
+@ApiTags(ApiTagsEnum.loan)
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)
 export class LoanController {
