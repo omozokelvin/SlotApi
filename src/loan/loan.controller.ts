@@ -61,7 +61,7 @@ export class LoanController {
 
   @Get('/')
   @PaginatedModel(ILoan)
-  async getAllRoles(@Query() query: PaginationDto, @GetUser() user: IUser) {
+  async paginate(@Query() query: PaginationDto, @GetUser() user: IUser) {
     return this.loanService.paginate(query, user);
   }
 }
