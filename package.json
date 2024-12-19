@@ -9,7 +9,7 @@
     "prebuild": "rm -rf dist",
     "build": "nest build",
     "postbuild": "npm run sentry:sourcemaps && cp -r templates dist/templates",
-    "build:doc": "npx @compodoc/compodoc -p tsconfig.doc.json -d docs",
+    "build:docs": "npx @compodoc/compodoc -p tsconfig.doc.json -d docs",
     "start": "node dist/main",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --watch --debug",
@@ -22,7 +22,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json --detectOpenHandles",
     "precommit": "npm run format && npm run lint && git add -A",
-    "doc": "npm run build:doc -- -s",
+    "doc": "npm run build:docs -- -s",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org darkel-microsystems-limited --project slot-api ./dist && sentry-cli sourcemaps upload --org darkel-microsystems-limited --project slot-api ./dist"
   },
   "lint-staged": {
