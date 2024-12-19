@@ -60,12 +60,13 @@ export class User {
   })
   mobileNumber?: string;
 
-  // this could be an object
+  // this could be an object to track various state
   @Prop({
     default: false,
   })
   onboarded?: boolean;
 
+  // a derivate of the first and last name for easy search
   @Prop({
     trim: true,
   })
@@ -81,6 +82,7 @@ export class User {
   })
   referredBy?: User | string;
 
+  // a list of roles that the user has
   @ApiProperty({
     type: [String],
   })
@@ -105,7 +107,9 @@ export class User {
   })
   photo?: string;
 
-  @Prop()
+  @Prop({
+    default: undefined,
+  })
   pushToken?: string;
 
   @Prop()
