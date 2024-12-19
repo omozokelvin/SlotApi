@@ -7,17 +7,21 @@ import { InjectModel } from '@nestjs/mongoose';
 import { ILoan, Loan } from '@/loan/schemas/loan.schema';
 import { FilterQuery, Model } from 'mongoose';
 import { PaginationDto } from '@/_common/dtos/response.dto';
+import { uniqueId } from '@/_common/helpers/string.helper';
 
 @Injectable()
 export class LoanService {
   constructor(
     @InjectModel(Loan.name)
-    private readonly model: Model<Loan>,
+    private readonly model: Model<ILoan>,
   ) {}
 
   async create(body: CreateLoanDto, user: IUser) {
+    const reference = await this.generateReference();
+
     const role = await this.model.create({
       ...body,
+      reference,
       createdBy: user.id,
     });
 
@@ -62,7 +66,9 @@ export class LoanService {
 
     loan.$set(updateLoanDto);
 
-    return loan.save();
+    const saved = await loan.save();
+
+    return saved;
   }
 
   async remove(id: string, user: IUser) {
@@ -71,5 +77,19 @@ export class LoanService {
     await loan.deleteOne();
 
     return true;
+  }
+
+  private async generateReference() {
+    const reference = uniqueId();
+
+    const exist = await this.model.findOne({
+      reference: new RegExp(reference, 'i'),
+    });
+
+    if (exist) {
+      return this.generateReference();
+    }
+
+    return reference;
   }
 }

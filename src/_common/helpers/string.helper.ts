@@ -1,3 +1,6 @@
+import { AMBIGUOUS_CHARACTERS_REGEX } from '@/_common/constants/regex.constant';
+import { v4 as uuidv4 } from 'uuid';
+
 export const sentenceCase = (sentence: string) => {
   return sentence.charAt(0).toUpperCase() + sentence.slice(1);
 };
@@ -69,4 +72,13 @@ export const camelCaseToReadable = (str: string): string => {
   return str
     .replace(/([A-Z])/g, ' $1') // Insert a space before all capital letters
     .replace(/^./, (firstChar) => firstChar.toUpperCase()); // Capitalize the first letter
+};
+
+export const uniqueId = (length = 6) => {
+  return uuidv4()
+    .replaceAll('-', '')
+    .replace(AMBIGUOUS_CHARACTERS_REGEX, '')
+    .substring(0, length)
+    .toUpperCase()
+    .padEnd(length, 'X');
 };

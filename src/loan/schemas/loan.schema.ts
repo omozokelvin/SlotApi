@@ -36,14 +36,14 @@ export class Loan {
   @Prop({
     required: true,
   })
-  loanAmount: number;
+  amount: number;
 
   @Prop({
     required: true,
     enum: enumValuesAsArray(OtpChannelEnum),
     type: String,
   })
-  loanStatus: LoanStatusEnum;
+  status: LoanStatusEnum;
 
   @Prop({
     required: true,

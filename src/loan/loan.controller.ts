@@ -30,22 +30,28 @@ export class LoanController {
   constructor(private readonly loanService: LoanService) {}
 
   @Post()
-  create(@Body() createLoanDto: CreateLoanDto, @GetUser() user: IUser) {
-    return this.loanService.create(createLoanDto, user);
+  create(
+    @Body() createLoanDto: CreateLoanDto,
+    @GetUser() user: IUser,
+  ): Promise<ILoan> {
+    return this.loanService
+      .create(createLoanDto, user)
+      .then((item) => item?.toObject());
   }
 
   @Get(':id')
-  findOne(@Param() { id }: IdDto, @GetUser() user: IUser) {
+  findOne(@Param() { id }: IdDto, @GetUser() user: IUser): Promise<ILoan> {
     return this.loanService.findOne(id, user);
   }
 
   @Patch(':id')
-  update(
+  async update(
     @Param() { id }: IdDto,
     @Body() updateLoanDto: UpdateLoanDto,
     @GetUser() user: IUser,
-  ) {
-    return this.loanService.update(id, updateLoanDto, user);
+  ): Promise<ILoan> {
+    const item = await this.loanService.update(id, updateLoanDto, user);
+    return item?.toObject();
   }
 
   @Delete(':id')
@@ -55,7 +61,7 @@ export class LoanController {
 
   @Get('/')
   @PaginatedModel(ILoan)
-  async getAllRoles(@Query() query: PaginationDto, @GetUser() user: IUser) {
+  async paginate(@Query() query: PaginationDto, @GetUser() user: IUser) {
     return this.loanService.paginate(query, user);
   }
 }
