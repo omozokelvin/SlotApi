@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      NODE_ENV: ${{ github.head_ref }}
 
     steps:
       - name: Git checkout
@@ -30,4 +32,6 @@ jobs:
       - name: Build application
         run: npm run build
         env:
+          SENTRY_DSN: ${{ env.SENTRY_DSN }}
           SENTRY_AUTH_TOKEN: ${{ env.SENTRY_AUTH_TOKEN }}
+          NODE_ENV: ${{ env.NODE_ENV }}
