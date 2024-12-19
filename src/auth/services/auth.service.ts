@@ -97,7 +97,7 @@ export class AuthService {
 
       if (existingUser) {
         this.logger.log('User already exists');
-        existingUser.id = existingUser._id.toString();
+        existingUser.id = existingUser.id;
 
         response = await this.login(existingUser, userAgent, session);
       } else {
