@@ -36,8 +36,11 @@ export class UserService {
     private readonly tokenService: TokenService,
   ) {}
 
-  async findByEmail(email: string, session: ClientSession = null) {
-    return this.model.findOne(
+  async findByEmail(
+    email: string,
+    session: ClientSession = null,
+  ): Promise<IUser> {
+    return this.model.findOne<IUser>(
       {
         email: new RegExp(email, 'i'),
         password: {
@@ -245,7 +248,7 @@ export class UserService {
     }
   }
 
-  async getById(id: string) {
+  async getById(id: string): Promise<IUser> {
     const user = (await this.model.findById(id, ['+deleted'], {
       populate: {
         path: 'roles',
@@ -370,7 +373,7 @@ export class UserService {
     }
   }
 
-  async updatePassword(body: UpdatePasswordDto, user: IUser) {
+  async updatePassword(body: UpdatePasswordDto, user: IUser): Promise<IUser> {
     try {
       await this.otpService.validateIfOtpIsVerified({
         value: user.email,
